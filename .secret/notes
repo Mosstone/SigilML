@@ -1,0 +1,186 @@
+SIGILML PROJECT KNOWLEDGE BASE
+=================================
+
+LAST UPDATED: 2024-01-23 (Complete Architecture)
+
+PROJECT OVERVIEW
+----------------
+SigilML is a thin C-based interpreter as a Python module that:
+- Reads .sml files and returns text data to Python
+- Expands links in-place with configurable modes
+- Supports indefinite recursive traversal (Wikipedia-style)
+- Embeds API responses directly in output
+- Converts output to XML or plaintext if specified
+- Baked into Python module using C API
+- Executable and supports multi-language interfaces (Elixir, Rust)
+- Creates pathway data for efficient reuse
+- Generates time decay heatmap data based on usage
+- May incorporate PageRank data for relevance
+
+CURRENT STATE
+-------------
+✓ Nothing implemented yet (confirmed Jan 23, 2024)
+✓ Citation format is TODO for later development
+✓ Complete architecture now clearly defined
+
+CORE CONCEPTS
+-------------
+
+1. CITATIONS
+   - Format: TODO (future development)
+   - Can be overridden by interpreter
+   - Can be pulled or suppressed by interpreter
+   - Default: entire document if no passage specified
+
+2. EXPANSION MODES
+   - Discard: Links invisible, hyperlink text used (non-rich output)
+   - Passage: Links replaced with specific data (paragraph/object)
+   - Default: Entire document returned
+   - Override: Interpreter can override .sml specifications
+
+3. OUTPUT FORMATS
+   - Default: Raw sigil (can be fed back into interpreter)
+   - XML: Optional conversion
+   - Plaintext: Optional conversion
+   - Recursive: Can loop indefinitely (Wikipedia-style)
+
+4. API INTEGRATION
+   - API responses embedded in output
+   - No caching (fetched fresh each time)
+   - Supports event-driven responses:
+     * Database queries
+     * Web searches
+     * AI model calls
+     * Current data (e.g., weather)
+
+5. INTERPRETER
+   - Thin C-based implementation
+   - Baked into Python module using C API
+   - Returns text data to Python for developer use
+   - Executable module
+   - Multi-language support (Elixir, Rust interfaces)
+   - Prevents duplicate document reading
+   - Creates pathway data for reuse
+   - Generates time decay heatmap data
+   - May incorporate PageRank data
+
+ADVANCED FEATURES
+-----------------
+
+1. NAVIGATION SYSTEM
+   - Complete library of information in sigil format
+   - Actively maintained citation network
+   - Natively navigable by algorithms
+   - Start at any point and expand relevant concepts
+   - Prevents same document from being read multiple times
+
+2. PATHWAY DATA
+   - Tracks navigation pathways through citation network
+   - Allows architects to reuse entire pathways
+   - Single-step reuse instead of individual paging
+   - Stores pathway metadata for efficiency
+
+3. RELEVANCE SYSTEM
+   - Time decay heatmap based on real usage
+   - May incorporate PageRank data if available
+   - Preferentially expands adjacent context links
+   - Sensitivity to relevance for model guidance
+   - Usage-based relevance scoring
+
+4. ALGORITHMIC NAVIGATION
+   - Start at any particular point in citation network
+   - Expand relevant nearby concepts
+   - Follow citation links recursively
+   - Build contextual understanding through traversal
+   - Prevent duplicate document processing
+
+EXPANSION MODES (Detailed)
+---------------------------
+
+1. DISCARD MODE
+   - Links become invisible
+   - Hyperlink text is used if present
+   - Returns non-rich text data
+   - Example: "See [related work]" → "See related work"
+
+2. PASSAGE MODE
+   - Links replaced with specific data
+   - Can wrap to paragraph or object
+   - Can specify two points in document
+   - Example: "[citation]" → "Full paragraph text..."
+
+3. DEFAULT MODE
+   - Returns entire document
+   - Maintains all citations and links
+   - Preserves structure for further processing
+
+OUTPUT BEHAVIOR
+---------------
+- Default: Raw sigil format
+- Can be fed back into interpreter indefinitely
+- Creates Wikipedia-style navigation behavior
+- Optional conversion to XML or plaintext
+- API responses embedded directly
+- Pathway data included in output
+- Heatmap data generated during traversal
+
+IMPLEMENTATION DETAILS
+----------------------
+- Language: C (core) + Python (module)
+- Integration: C API baked into Python module
+- Interface: Executable module
+- Multi-language: Elixir, Rust support
+- Input: .sml files with citations
+- Output: Text data (sigil/XML/plaintext) + pathway data + heatmap
+- Dependencies: Python C API, libcurl (HTTP)
+- Navigation: Prevents duplicate document reading
+- Analytics: Time decay heatmap generation
+
+EXAMPLE WORKFLOW
+-----------------
+1. Input .sml file with citations
+2. Call interpreter with mode parameters
+3. Interpreter processes citations
+4. Fetches API responses (no caching)
+5. Prevents duplicate document reading
+6. Tracks navigation pathway
+7. Generates time decay heatmap
+8. Returns text data + pathway + heatmap to Python
+9. Developer uses data as needed
+10. Can feed output back into interpreter
+11. Recursive traversal with pathway reuse
+
+USE CASE: COMPLETE LIBRARY NAVIGATION
+--------------------------------------
+1. Library of information written in sigil format
+2. Actively maintained citation network
+3. Algorithm starts at any entry point
+4. Expands relevant nearby concepts
+5. Follows citation links recursively
+6. Builds contextual understanding
+7. Prevents duplicate document processing
+8. Creates pathway data for reuse
+9. Generates heatmap of usage patterns
+10. Incorporates PageRank for relevance
+11. Enables efficient knowledge traversal
+
+CLARIFICATION COMPLETE
+----------------------
+✓ API caching: No caching, fetch fresh each time
+✓ Output handling: Returns text data to Python
+✓ Citation format: TODO for later
+✓ Expansion modes: Discard, Passage, Default
+✓ Output formats: Raw sigil, XML, plaintext
+✓ Recursive behavior: Wikipedia-style navigation
+✓ Multi-language: Elixir, Rust support
+✓ Implementation: C API baked into Python module
+✓ Navigation: Prevents duplicate reading
+✓ Pathway data: Created for reuse
+✓ Heatmap: Time decay based on usage
+✓ Relevance: PageRank integration possible
+
+REFERENCE DOCUMENTS
+-------------------
+- Description (project vision)
+- example.sml (format examples - may need updating)
+- .spec/ files (may be outdated)

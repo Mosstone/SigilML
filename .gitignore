@@ -1,0 +1,22 @@
+#<<<    Dev notes, redundant copies, checkpoints, and tools  
+
+#   checkpoints and backups
+**/.mirror/
+.mirror/
+
+#   dev tools
+**.outfit/
+.outfit/
+
+#   internal messages
+**.secret/
+.secret/
+
+
+#<<<    IDE files and misc artefacts. If you notice rubbish in
+#       the project add them here and remove them from the git
+.idea/
+*.iml
+.vscode/
+*.sublime-*
+*.code-workspace

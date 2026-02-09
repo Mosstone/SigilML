@@ -1,0 +1,224 @@
+{
+  "version": "4.0.0",
+  "project": "SigilML",
+  "description": "Thin C-based interpreter as Python module for reading .sml files, expanding links with configurable modes, creating pathway data, generating time decay heatmaps, and supporting algorithmic navigation through citation networks",
+  "current_state": "Not implemented - complete architecture defined",
+  
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Core Interpreter",
+      "description": "Create C-based interpreter with Python C API integration",
+      "tasks": [
+        {
+          "id": "t1",
+          "name": "Design basic .sml file format",
+          "status": "pending",
+          "dependencies": []
+        },
+        {
+          "id": "t2",
+          "name": "Implement C-based interpreter",
+          "status": "pending",
+          "dependencies": ["t1"]
+        },
+        {
+          "id": "t3",
+          "name": "Integrate with Python C API",
+          "status": "pending",
+          "dependencies": ["t2"]
+        },
+        {
+          "id": "t4",
+          "name": "Implement basic link expansion",
+          "status": "pending",
+          "dependencies": ["t3"]
+        },
+        {
+          "id": "t5",
+          "name": "Add duplicate document prevention",
+          "status": "pending",
+          "dependencies": ["t4"]
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "m2",
+      "name": "Expansion Modes",
+      "description": "Implement Discard, Passage, and Default expansion modes",
+      "tasks": [
+        {
+          "id": "t6",
+          "name": "Implement Discard mode",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t7",
+          "name": "Implement Passage mode",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t8",
+          "name": "Implement Default mode",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t9",
+          "name": "Add override capability",
+          "status": "pending",
+          "dependencies": ["t6", "t7", "t8"]
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "m3",
+      "name": "Output Formats",
+      "description": "Add support for XML and plaintext conversion",
+      "tasks": [
+        {
+          "id": "t10",
+          "name": "Implement XML conversion",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t11",
+          "name": "Implement plaintext conversion",
+          "status": "pending",
+          "dependencies": ["m1"]
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "m4",
+      "name": "API Integration",
+      "description": "Add support for API response embedding (no caching)",
+      "tasks": [
+        {
+          "id": "t12",
+          "name": "Implement HTTP fetching (libcurl)",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t13",
+          "name": "Embed API responses in output",
+          "status": "pending",
+          "dependencies": ["t12"]
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "m5",
+      "name": "Pathway System",
+      "description": "Implement pathway data creation and reuse",
+      "tasks": [
+        {
+          "id": "t14",
+          "name": "Track navigation pathways",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t15",
+          "name": "Implement pathway reuse",
+          "status": "pending",
+          "dependencies": ["t14"]
+        },
+        {
+          "id": "t16",
+          "name": "Store pathway metadata",
+          "status": "pending",
+          "dependencies": ["t15"]
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "m6",
+      "name": "Relevance System",
+      "description": "Implement time decay heatmap and PageRank integration",
+      "tasks": [
+        {
+          "id": "t17",
+          "name": "Generate time decay heatmap data",
+          "status": "pending",
+          "dependencies": ["m1"]
+        },
+        {
+          "id": "t18",
+          "name": "Add PageRank data support",
+          "status": "pending",
+          "dependencies": ["t17"]
+        },
+        {
+          "id": "t19",
+          "name": "Implement relevance-based expansion",
+          "status": "pending",
+          "dependencies": ["t18"]
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "m7",
+      "name": "Multi-Language Support",
+      "description": "Add Elixir and Rust interfaces",
+      "tasks": [
+        {
+          "id": "t20",
+          "name": "Create Elixir interface",
+          "status": "pending",
+          "dependencies": ["m6"]
+        },
+        {
+          "id": "t21",
+          "name": "Create Rust interface",
+          "status": "pending",
+          "dependencies": ["m6"]
+        }
+      ],
+      "status": "pending"
+    }
+  ],
+  
+  "technical_details": {
+    "language": "C (core) + Python (module)",
+    "integration": "Python C API baked into module",
+    "interface": "Executable module",
+    "input_format": ".sml files with citations",
+    "output_formats": ["raw sigil", "XML", "plaintext"],
+    "expansion_modes": ["discard", "passage", "default"],
+    "api_behavior": "no caching, fetch fresh each time",
+    "recursive_behavior": "Wikipedia-style navigation",
+    "multi_language": ["Elixir", "Rust"],
+    "dependencies": ["Python C API", "libcurl (HTTP)"],
+    "navigation_features": ["duplicate prevention", "pathway tracking", "heatmap generation"],
+    "relevance_features": ["time decay heatmap", "PageRank integration", "usage-based scoring"],
+    "project_structure": {
+      "src/": {
+        "sigilml/": {
+          "interpreter.c": "C-based interpreter",
+          "bindings.c": "Python C API bindings",
+          "__init__.py": "Python module interface"
+        }
+      },
+      "tests/": {
+        "test_interpreter.py": "Interpreter tests",
+        "test_expansion.py": "Expansion mode tests",
+        "test_api.py": "API integration tests",
+        "test_pathway.py": "Pathway system tests",
+        "test_relevance.py": "Relevance system tests"
+      }
+    }
+  },
+  
+  "notes": "See .secret/notes for detailed project understanding"
+}
